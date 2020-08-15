@@ -29,7 +29,7 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: Electrum-4.0.2-linux
-        path: ./dist/Electrum-4.0.2.tar.gz
+        path: ./dist/Electrum-4.0.2.tar.gzdist/electrum-01d6d84.dmg
   windows:
     runs-on: ubuntu-18.04
     steps:
@@ -58,3 +58,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build OSX Package
       run: ./contrib/osx/make_osx
+    - uses: actions/upload-artifact@v2
+      with:
+        name: Electrum-4.0.2-MacOS
+        path: ./dist/electrum-*.dmg
