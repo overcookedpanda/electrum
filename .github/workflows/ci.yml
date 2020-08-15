@@ -26,3 +26,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build Linux source tarball
       run: cd contrib/build-linux/sdist && ./build.sh
+    - uses: actions/upload-artifacts@v2
+      with:
+        name: Electrum-4.0.2-linux
+        path: ./contrib/build-linux/sdist/../../../dist/Electrum-4.0.2.tar.gz
