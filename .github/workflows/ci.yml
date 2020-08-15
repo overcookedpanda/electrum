@@ -77,3 +77,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build Windows Package
       run: cd contrib/build-wine && ./build.sh
+  macos:
+    runs-on: macos-latest
+    steps:
+      - name: Build OSX Package
+      run: ./contrib/osx/make_osx
