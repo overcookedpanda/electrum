@@ -45,7 +45,7 @@ jobs:
       run: sudo docker build -t electrum-wine-builder-img contrib/build-wine
     - name: Build Windows Package
       run: |
-        sudo docker run -it \
+        sudo docker run \
             --name electrum-wine-builder-cont \
             -v $PWD:/opt/wine64/drive_c/electrum \
             --rm \
