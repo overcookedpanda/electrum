@@ -31,9 +31,7 @@ jobs:
         name: Electrum-4.0.2-linux
         path: ./dist/Electrum-4.0.2.tar.gz
   windows:
-    runs-on: ubuntu-latest
-    container:
-      image: ubuntu:18.04@sha256:b58746c8a89938b8c9f5b77de3b8cf1fe78210c696ab03a1442e235eea65d84f
+    runs-on: ubuntu-18.04
     steps:
     - name: Install Docker
       run: |
