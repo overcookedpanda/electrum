@@ -42,10 +42,10 @@ jobs:
         sudo apt-get install -y docker-ce
     - uses: actions/checkout@v2
     - name: Build WINE Dockerfile
-      run: docker build -t electrum-wine-builder-img contrib/build-wine
+      run: sudo docker build -t electrum-wine-builder-img contrib/build-wine
     - name: Build Windows Package
       run: |
-        docker run -it \
+        sudo docker run -it \
             --name electrum-wine-builder-cont \
             -v $PWD:/opt/wine64/drive_c/electrum \
             --rm \
