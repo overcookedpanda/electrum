@@ -80,5 +80,5 @@ jobs:
   macos:
     runs-on: macos-latest
     steps:
-      - name: Build OSX Package
+    - name: Build OSX Package
       run: ./contrib/osx/make_osx
