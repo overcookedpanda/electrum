@@ -29,7 +29,7 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: Electrum-4.0.2-linux
-        path: ./dist/Electrum-4.0.2.tar.gzdist/electrum-01d6d84.dmg
+        path: ./dist/Electrum-4.0.2.tar.gz
   windows:
     runs-on: ubuntu-18.04
     steps:
@@ -52,6 +52,13 @@ jobs:
             --workdir /opt/wine64/drive_c/electrum/contrib/build-wine \
             electrum-wine-builder-img \
             ./build.sh
+    - uses: actions/upload-artifact@v2
+      with:
+        name: Electrum-4.0.2-win64
+        path: |
+          ./contrib/build-wine/dist/electrum-*-portable.exe
+          ./contrib/build-wine/dist/electrum-*-setup.exe
+          ./contrib/build-wine/dist/electrum-*.exe
   macos:
     runs-on: macos-latest
     steps:
