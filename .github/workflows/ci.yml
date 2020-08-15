@@ -35,11 +35,11 @@ jobs:
     steps:
     - name: Install Docker
       run: |
-        apt-get install curl && \
-        curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - && \
-        add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" && \
-        apt-get update && \
-        apt-get install -y docker-ce
+        sudo apt-get install curl && \
+        sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && \
+        sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" && \
+        sudo apt-get update && \
+        sudo apt-get install -y docker-ce
     - uses: actions/checkout@v2
     - name: Build WINE Dockerfile
       run: docker build -t electrum-wine-builder-img contrib/build-wine
