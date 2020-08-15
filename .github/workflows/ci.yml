@@ -13,6 +13,7 @@ jobs:
     steps:
     - name: Install Dependencies
       run: |
+        apt-get update -q && \
         apt-get install -qy \
         git \
         gettext \
